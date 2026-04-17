@@ -52,11 +52,6 @@ FROM
 order by
 	t1.country;
     
-/* “The analysis reveals that gasoline taxes play a dominant role in determining retail fuel prices across countries, while subsidies have a more limited and inconsistent effect.
-Countries with high tax rates, such as India and Japan, exhibit significantly higher retail-to-crude price ratios despite substantial subsidy expenditure. In contrast, countries
-like Malaysia, which combine low taxes with high subsidies, maintain the lowest fuel prices. This suggests that taxation policy outweighs subsidy policy in shaping final fuel
-prices, and that subsidies alone are insufficient to offset the price-increasing effects of high taxes.” */
-
 
 
 /* [3] Are fuel prices across the 12 countries converging or diverging over time? */
@@ -99,13 +94,7 @@ from
 group by
 	year_date
     ;
-    
-/* this table shows the difference in yearly avg fuel price of each country to the global avg of every year using standard deviation yearly.
-	The standard deviation of fuel prices across countries indicates that price dispersion was relatively low and stable between 2015 and 2020,
-    suggesting mild convergence. However, a significant increase in dispersion is observed in 2021–2022, indicating strong divergence in fuel 
-    pricing across countries. Although dispersion decreases after 2022, it remains above early-period levels, suggesting only partial re-convergence
-    and increased volatility in recent years.*/
-    
+     
     
     
 /* [4] Is price volatility driven more by global price movement or domestic policy (tax/subsidy)? */
@@ -144,11 +133,7 @@ from
 order by
 	country,-- `volatility_retail(relative)`;
     year_date;
-    
-/* dev_brent ≈ dev_gasoline → global price movement dominates
-   dev_gasoline > dev_brent → domestic factors amplify volatility
-   dev_gasoline >> dev_brent consistently → strong domestic policy/supply effects and vice versa */
-   
+     
    
    
 /* [5] Which countries systematically favor diesel over petrol (or vice versa) through taxation? */
@@ -242,8 +227,3 @@ where
 	dates = '2026-04-01'
 order by
 	diff_in_changes desc;
-    
-/* diff_in_changes	Meaning
-	≈ 0				Full transmission
-	< 0				Absorption (retail increased less than crude)
-	> 0				Amplification (retail increased more than crude) */
