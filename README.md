@@ -73,7 +73,8 @@ asian-oil-market-analysis-sql-powerbi/
 
 ## 📷 Preview
 
-(Add your dashboard screenshot here)
+<img width="1125" height="639" alt="Screenshot 2026-04-18 000931" src="https://github.com/user-attachments/assets/655f7ddf-a987-4b38-98a1-35a121f03c2d" />
+
 
 ---
 
